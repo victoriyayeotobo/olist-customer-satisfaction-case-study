@@ -48,7 +48,7 @@ This case study is organised into five chapters, each representing a key stage o
 
 ## Project Methodology
 
-![Project Roadmap](images/analytics_project_roadmap.png)
+![Project Roadmap](Images/Analytics Case Study Roadmap.png)
 
 The project follows a structured analytical methodology, beginning with business understanding before progressing through data discovery, data quality assessment, exploratory analysis and business recommendations.
 
