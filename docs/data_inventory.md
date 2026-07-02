@@ -19,6 +19,18 @@ The dataset consists of nine related tables representing different stages of the
 | olist_geolocation_dataset | Geographic reference | Supporting |
 | product_category_name_translation | Product category translation | Supporting |
 
+| Column                          | Initial Interpretation              |
+| ------------------------------- | ----------------------------------- |
+| `order_id`                      | Unique identifier for an order      |
+| `customer_id`                   | Customer who placed the order       |
+| `order_status`                  | Current status of the order         |
+| `order_purchase_timestamp`      | When the customer placed the order  |
+| `order_approved_at`             | When payment/order was approved     |
+| `order_delivered_carrier_date`  | When the carrier received the order |
+| `order_delivered_customer_date` | When the customer received it       |
+| `order_estimated_delivery_date` | Promised delivery date              |
+
+
 ## olist_orders_dataset
 
 ### Business Purpose
