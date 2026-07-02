@@ -52,3 +52,20 @@ Repository Structure
 | notebooks | Python analysis |
 | dashboard | Tableau workbook and dashboard assets |
 | images | Diagrams and project visuals |
+
+
+## Current Chapter
+
+### Chapter 2 — Understanding the Data Landscape
+
+Completed:
+
+- Data Inventory
+- Initial Relationship Mapping
+- Business Understanding of Core Tables
+- KPI Framework
+
+Next:
+
+- Data Quality Assessment
+- SQL Exploration
