@@ -1,0 +1,213 @@
+# TABLEAU DASHBOARD BUILD GUIDE
+# Olist Customer Satisfaction Analysis
+# Analyst: Victor Otobo
+# ─────────────────────────────────────────────────────────────────────────────
+# This guide tells you exactly what to build on each Tableau page,
+# which exported CSV to connect to, and how to format it professionally.
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+# ════════════════════════════════════════════════════════════════════════════
+# DATA SOURCES
+# Connect these CSVs (exported from Python notebook):
+#   outputs/tableau_orders_delivery.csv   → main fact table
+#   outputs/tableau_category_summary.csv  → category aggregates
+#   outputs/tableau_seller_summary.csv    → seller aggregates
+#   outputs/tableau_regional_summary.csv  → state-level aggregates
+# ════════════════════════════════════════════════════════════════════════════
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# PAGE 1 — EXECUTIVE OVERVIEW
+# Audience: COO, CFO, Executive Leadership
+# Purpose: Answer "what is the state of customer satisfaction?" in <60 seconds
+# ─────────────────────────────────────────────────────────────────────────────
+
+PAGE 1 ELEMENTS:
+
+KPI CARDS (top row, 4 cards):
+  Card 1: "Overall Avg Review Score"     → 4.09 / 5.0
+  Card 2: "Late Delivery Rate"           → X% of orders
+  Card 3: "Negative Review Rate"         → X% (score ≤ 2)
+  Card 4: "Total Orders Analysed"        → ~96,000
+
+  Formatting:
+  - Large number in centre of card (font size 28–32, bold)
+  - Label below in smaller text (font size 10, grey)
+  - Colour the number: green if healthy, amber if watch, red if critical
+  - Use thin border on card, white background
+
+LINE CHART (middle):
+  Title: "Quarterly Review Score Trend"
+  X-axis: Quarter (Q1 2017, Q2 2017… Q3 2018)
+  Y-axis: Avg Review Score (fixed range: 3.5 to 4.5 so variance is visible)
+  Lines: Avg Review Score (solid, green) + % Negative Reviews (dashed, red, dual axis)
+  Add reference line at 4.0 = target threshold
+
+BAR CHART (bottom left):
+  Title: "Review Score by Delivery Bracket"
+  X-axis: Delivery bracket (5 categories)
+  Y-axis: Avg review score
+  Colour: Green/Amber/Red based on score value
+  This is your KEY FINDING 1 on the executive page
+
+TEXT BOX (bottom right):
+  Headline Insight (formatted as executive callout):
+  "Orders delivered 7+ days late receive an average score of 2.1,
+   versus 4.3 for on-time orders. This 2.2-point gap represents the
+   single largest driver of customer dissatisfaction on the platform."
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# PAGE 2 — DELIVERY PERFORMANCE DEEP DIVE
+# Audience: Operations Team, Logistics
+# Purpose: Show WHERE and WHEN delivery failures occur
+# ─────────────────────────────────────────────────────────────────────────────
+
+PAGE 2 ELEMENTS:
+
+FILTERS (top bar):
+  - Customer State (multi-select dropdown)
+  - Year/Quarter (date filter)
+  - Delivery bracket (checkbox)
+
+MAP (left half, large):
+  Data source: tableau_regional_summary.csv
+  Plot: Brazilian states (state = customer_state field)
+  Colour: Late delivery rate (red gradient = higher late rate)
+  Tooltip: State | Avg delivery days | Late rate | Avg review score
+  Title: "Late Delivery Rate by State"
+
+BAR CHART (top right):
+  Title: "Average Delivery Days by State (Top 10 Slowest)"
+  X-axis: Avg actual delivery days
+  Y-axis: State (sorted descending)
+  Colour: Amber/Red for states above national average
+  Add reference line = national avg delivery days
+
+SCATTER PLOT (bottom right):
+  Title: "Delivery Time vs Review Score by State"
+  X-axis: Avg delivery days
+  Y-axis: Avg review score
+  Size: Order count
+  Colour: Late delivery rate
+  Annotation: Label the outlier states (high delay + low score)
+
+INSIGHT BOX:
+  "States in the North and Northeast region average X days for delivery,
+   compared to X days in the Southeast. Customers in these states rate
+   their experience X points lower on average."
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# PAGE 3 — PRODUCT & SELLER PERFORMANCE
+# Audience: Product Team, Seller Success Team
+# Purpose: Identify category and seller risks for targeted action
+# ─────────────────────────────────────────────────────────────────────────────
+
+PAGE 3 ELEMENTS:
+
+SCATTER PLOT (top left, large):
+  Data source: tableau_category_summary.csv
+  Title: "Product Category Risk Matrix"
+  X-axis: Order count (volume)
+  Y-axis: Avg review score
+  Size: % Negative reviews
+  Colour: Avg review score (red-yellow-green)
+  Reference lines: median volume (vertical) + platform avg score (horizontal)
+  Quadrant labels:
+    Top-right:    "High volume, high score → Maintain"
+    Bottom-right: "High volume, low score  → Priority"
+    Top-left:     "Low volume, high score  → Monitor"
+    Bottom-left:  "Low volume, low score   → Review"
+  Tooltip: Category | Orders | Avg Score | % Negative
+
+BAR CHART (top right):
+  Title: "Bottom 10 Categories by Review Score"
+  X-axis: Avg review score
+  Y-axis: Category name
+  Sorted: Lowest to highest
+  Colour: Red threshold (<3.5) vs Amber (3.5–4.0)
+  Add data labels on bars
+
+TABLE / SCATTER (bottom half):
+  Data source: tableau_seller_summary.csv
+  Title: "Seller Risk Overview (≥30 orders)"
+  X-axis: Late delivery rate (%)
+  Y-axis: Avg review score
+  Size: Order count
+  Colour: At-risk flag (red = at-risk, grey = healthy)
+  Reference lines: 30% late rate (vertical) + 3.5 score (horizontal)
+  Tooltip: Seller ID | Orders | Score | Late rate | Revenue (BRL)
+  Filter: Slider for minimum order count
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# PAGE 4 — RECOMMENDATIONS TRACKER
+# Audience: All stakeholders
+# Purpose: Make the "so what?" one click away
+# This page is what separates your project from every other portfolio project.
+# ─────────────────────────────────────────────────────────────────────────────
+
+PAGE 4 ELEMENTS:
+
+This page is NOT a data visualisation. It is a formatted summary table
+built inside Tableau using text sheets + containers.
+
+HEADER TEXT:
+  "Recommendations for Olist Leadership — Based on 2016–2018 Analysis"
+  Subheader: "Four prioritised actions to improve customer satisfaction"
+
+RECOMMENDATION CARDS (4 cards, stacked):
+
+  Each card contains:
+  ┌─────────────────────────────────────────────────────────────────┐
+  │  [Priority badge: HIGH / MEDIUM]  [Owner: Team name]           │
+  │                                                                 │
+  │  REC-01: Introduce Delivery SLA Monitoring at Seller Level      │
+  │                                                                 │
+  │  Finding:      Orders 7+ days late average score of 2.1         │
+  │  Action:       30-day rolling late rate monitored per seller.   │
+  │                Sellers >30% late enter improvement track.       │
+  │  Est. impact:  ~0.1–0.2 point improvement in platform avg score │
+  └─────────────────────────────────────────────────────────────────┘
+
+  REC-01: Delivery SLA monitoring           → Operations + Seller Success
+  REC-02: Recalibrate northern state ETAs   → Operations
+  REC-03: Category quality reviews          → Product + Seller Success
+  REC-04: At-risk seller improvement program → Seller Success
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# FORMATTING STANDARDS (apply to all pages)
+# ─────────────────────────────────────────────────────────────────────────────
+
+COLOURS:
+  Primary green   : #00B37E  (positive, healthy, on-target)
+  Warning amber   : #F59E0B  (watch, borderline)
+  Critical red    : #EF4444  (at-risk, requires action)
+  Dark text       : #1A1A2E
+  Body text grey  : #6B7280
+  Background      : #F9FAFB (very light grey, not white)
+  Card background : #FFFFFF
+
+FONTS:
+  Title  : 14–16pt, Bold, #1A1A2E
+  Sub    : 11–12pt, Regular, #1A1A2E
+  Labels : 9–10pt, Regular, #6B7280
+
+LAYOUT:
+  - Navigation tabs at top (not sidebar)
+  - Each page title in top-left, subtitle below it
+  - Minimal grid lines (use subtle grey, not black)
+  - Remove all chart borders and outer frames
+  - Use tooltips on every chart — they are how hiring managers explore
+
+DASHBOARD SIZE:
+  Fixed width: 1400 x 900 px
+  This ensures consistent layout on any screen.
+
+PUBLISHING:
+  1. Publish to Tableau Public (free account)
+  2. Copy the embed link and add it to your README
+  3. The README says: "[View interactive dashboard on Tableau Public](link)"
