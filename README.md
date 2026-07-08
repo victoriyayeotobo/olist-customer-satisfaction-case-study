@@ -14,7 +14,7 @@ This case study is being developed as a structured five-chapter analytics invest
 
 - ✅ Chapter 1 – Business Understanding
 - ✅ Chapter 2 – Understanding the Data Landscape
-- ✅ Chapter 3 – Exploring the Evidence
+- ✅ Chapter 3 – Exploring the Evidence (Data Quality & Validation)
 - ⬜ Chapter 4 – Developing Insights
 - ⬜ Chapter 5 – Delivering Recommendations
 
@@ -104,4 +104,34 @@ Assess the quality of the data before beginning SQL exploration and analysis.
 
 ## Guiding Principle
 
-> **No conclusion will appear in this case study until it has been supported by evidence from the data.**
+**No conclusion will appear in this case study until it has been supported by evidence from the data.**
+
+---
+
+## Chapter 3
+
+### Exploring the Evidence
+
+**Objective**
+
+Validate the quality and reliability of the Olist dataset before beginning exploratory analysis.
+
+This chapter focused on verifying that the data was complete, consistent and suitable for investigating the operational drivers of customer satisfaction. Rather than assuming the dataset was analysis-ready, each core table was assessed to ensure later findings would be supported by reliable evidence.
+
+**Deliverables**
+
+- Dataset completeness assessment
+- Order status validation
+- Historical date range validation
+- Missing values investigation
+- Customer review assessment
+- Product category completeness assessment
+- SQL data import documentation
+
+**Outcome**
+
+The validation confirmed that the dataset is suitable for exploratory analysis. Minor limitations were identified, documented and will be considered throughout the remainder of the project.
+
+**Next Step**
+
+Begin exploratory SQL analysis to investigate the operational and commercial factors influencing customer satisfaction.
