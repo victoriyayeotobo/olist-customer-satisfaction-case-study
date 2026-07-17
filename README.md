@@ -15,20 +15,24 @@ This case study is being developed as a structured five-chapter analytics invest
 - ✅ Chapter 1 – Business Understanding
 - ✅ Chapter 2 – Understanding the Data Landscape
 - ✅ Chapter 3 – Exploring the Evidence (Data Quality & Validation)
-- ⬜ Chapter 4 – Developing Insights
+- ✅ Chapter 4 – Developing Insights
 - ⬜ Chapter 5 – Delivering Recommendations
 
 ---
 
 ## Business Context
 
-Olist is a Brazilian e-commerce marketplace that connects customers with thousands of independent sellers across the country.
+---
 
-Customer satisfaction is a critical business outcome for any marketplace, influencing customer retention, seller performance and long-term commercial growth.
+## Key Findings (Current)
 
-This case study investigates the operational and commercial factors that influence customer satisfaction using Olist's public e-commerce dataset. The objective is to produce evidence-based insights and recommendations that could support business decision-making.
+The analysis completed so far has identified three operational factors that are strongly associated with customer satisfaction.
 
-At this stage, no assumptions have been made regarding the causes of customer satisfaction or dissatisfaction. The investigation will allow the data to guide the findings.
+- Delivery performance shows the strongest relationship with customer review scores.
+- Customer satisfaction varies across product categories, with several high-volume categories generating a disproportionate number of negative reviews.
+- Customer dissatisfaction is concentrated among a relatively small group of sellers rather than being evenly distributed across the marketplace.
+
+These findings will be consolidated into an executive dashboard and final business recommendations in Chapter 5.
 
 ---
 
@@ -135,3 +139,32 @@ The validation confirmed that the dataset is suitable for exploratory analysis. 
 **Next Step**
 
 Begin exploratory SQL analysis to investigate the operational and commercial factors influencing customer satisfaction.
+
+---
+
+## Chapter 4
+
+### Developing Insights
+
+**Objective**
+
+Identify the operational and commercial factors most strongly associated with customer satisfaction using evidence derived from SQL analysis.
+
+Rather than describing the data, this chapter investigates the relationships between delivery performance, product categories and seller performance to understand where customer dissatisfaction is concentrated.
+
+**Deliverables**
+
+- Delivery performance analysis
+- Product category analysis
+- Seller performance analysis
+- Evidence-based business recommendations
+
+**Key Findings**
+
+- Customer satisfaction declines consistently as delivery delays increase.
+- Certain product categories experience substantially poorer customer satisfaction than others.
+- Customer dissatisfaction is concentrated among a relatively small number of sellers.
+
+**Next Step**
+
+Translate these findings into an executive Tableau dashboard and conclude the case study with evidence-based recommendations.
