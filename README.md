@@ -94,7 +94,7 @@ The final Tableau dashboard brings together marketplace KPIs and the three major
 The dashboard was designed as a decision-support tool rather than a collection of every chart produced during the analysis.
 
 **Dashboard preview available in the `Images` and `dashboard` folders.**
-
+![Olist Customer Satisfaction Executive Dashboard](Images/executive_dashboard.png)
 ---
 
 ## Business Recommendations
