@@ -139,6 +139,9 @@ depending on the persistence and severity of their performance indicators.
 | Chapter 5 | From Insight to Business Action | ✅ Complete |
 
 ---
+## Full Case Study
+
+📄 [Read the complete five-chapter case study](docs/Olist_Customer_Satisfaction_Analytics_Case_Study.pdf)
 
 ## Project Methodology
 
