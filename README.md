@@ -16,7 +16,7 @@ This case study is being developed as a structured five-chapter analytics invest
 - ✅ Chapter 2 – Understanding the Data Landscape
 - ✅ Chapter 3 – Exploring the Evidence (Data Quality & Validation)
 - ✅ Chapter 4 – Developing Insights
-- ⬜ Chapter 5 – Delivering Recommendations
+- ✅  Chapter 5 – Delivering Recommendations
 
 ---
 
