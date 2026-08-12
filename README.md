@@ -141,7 +141,7 @@ depending on the persistence and severity of their performance indicators.
 ---
 ## Full Case Study
 
-📄 [Read the complete five-chapter case study](docs/Olist_Customer_Satisfaction_Analytics_Case_Study.pdf)
+📄 [Read the complete five-chapter case study](docs/OLIST_CUSTOMER_SATISFACTION_ANALYTICS.pdf)
 
 ## Project Methodology
 
